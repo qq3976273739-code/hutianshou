@@ -1,0 +1,7 @@
+[project]
+name = "hutianshou"
+version = "0.1.0"
+
+[tool.vercel]
+buildCommand = "pip install -r requirements.txt"
+devCommand = "flask run"
