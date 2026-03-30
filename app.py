@@ -5,21 +5,13 @@ from flask_limiter.util import get_remote_address
 app = Flask(__name__)
 limiter = Limiter(get_remote_address, app=app, default_limits=["10 per minute"])
 
-# ====================== 你自己改这里 ======================
+# 这里是配置区，不要写任何注释！！！
 MY_CONFIG = {
-    # 壁纸：换成你自己的图片链接（网络链接 / 图床链接都行）
     "bg_url": "https://i.imgur.com/23C9uNm.jpeg",
-
-    # 中间的大字
     "center_text": "四叶草",
-
-    # 收款码图片链接 - 【已修复：加上了键名 "qrcode_url"】
     "qrcode_url": "https://i.imgur.com/E6WlpW2.png",
-
-    # 管理员密码
     "admin_pwd": "wangyiming87"
 }
-# ========================================================
 
 @app.route("/robots.txt")
 def robots():
@@ -90,5 +82,5 @@ def admin():
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
 
-# 关键：给 Vercel 导出 app 实例
+# 导出实例
 application = app
