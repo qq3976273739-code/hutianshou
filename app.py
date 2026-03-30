@@ -87,5 +87,10 @@ def admin():
     MY_CONFIG["qrcode_url"] = request.form.get("qr")
     return redirect("/")
 
+# ...（前面所有代码不变）
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
+# 关键：给 Vercel 导出 app 实例
+application = app  # ← 加上这一行！
